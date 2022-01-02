@@ -89,11 +89,11 @@ html[data-theme="light"] {
   --ls-search-icon-color: var(--ls-icon-color);
   --ls-a-chosen-bg: #edece8;
 
-  --color-level-1 hsl(0, 0%, 96%);
-  --color-level-2 hsl(0, 0%, 94%);
-  --color-level-3 hsl(0, 0%, 92%);
-  --color-level-4 hsl(0, 0%, 90%);
-  --color-level-5 hsl(0, 0%, 88%);
+  --color-level-1: hsl(0, 5%, 98%);
+  --color-level-2: hsl(0, 5%, 97%);
+  --color-level-3: hsl(0, 5%, 96%);
+  --color-level-4: hsl(0, 5%, 95%);
+  --color-level-5: hsl(0, 5%, 94%);
 
   --ui-button-bg: #66cec4;
   --ui-button-color: #0a1312;
@@ -123,6 +123,7 @@ html[data-theme="light"] {
   --box-shadow-sm: rgba(171, 171, 171, 0.1) 0 2px 3px 0;
   --box-shadow-lg: rgba(171, 171, 171, 0.1) 0 4px 12px;
   --drop-shadow-sm: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+
 }
 
 .dark-theme,
@@ -198,10 +199,10 @@ html[data-theme="dark"] {
   --cl-l: 12%;
 
   --color-level-1: hsl(0, 0%, 12%);
-  --color-level-2: hsl(0, 0%, 14%);
-  --color-level-3: hsl(0, 0%, 16%);
-  --color-level-4: hsl(0, 0%, 18%);
-  --color-level-5: hsl(0, 0%, 20%);
+  --color-level-2: hsl(0, 0%, 13%);
+  --color-level-3: hsl(0, 0%, 15%);
+  --color-level-4: hsl(0, 0%, 16%);
+  --color-level-5: hsl(0, 0%, 17%);
 
   --ui-button-bg: #66cec4;
   --ui-button-color: #0a1312;
@@ -1022,6 +1023,19 @@ div[data-refs-self*='"card"'], .cards-review {
 	border: 1px dotted var(--ls-border-color);
 }
 
+a.warning,
+div.warning:not(.admonitionblock),
+p.warning,
+span.warning {
+  background: var(--red) !important;
+  color: var(--white, #fff);
+}
+
+a.error,
+span.error {
+  background: var(--red) !important;
+  color: var(--white, #fff);
+}
 /* MISC END */
 
 /* START Settings & Marketplace */
