@@ -17,6 +17,14 @@ Method 2. From the settings menu select the theme and your preferred version (Li
 
 **Admonitions** - You can use the built in feature to invoke the different admonitions by using <kbd> < </kbd> you can find example usage at the following link https://user-images.githubusercontent.com/7694090/147600668-9adfacca-1a56-4216-a4b2-65b159ad7351.mov
 
+**Changing Font** If you would like to use the font in the screencaps, "Montserrat" `@import` is included in the `mocha.css` to use add the following to your custom.css file
+
+```
+:root {
+	--ls-font-family: Montserrat;
+}
+```
+
 ### Screen Caps
 
 <img src="https://user-images.githubusercontent.com/7694090/147842599-6d541f3a-b303-4728-a3c3-2e789383215e.png" alt="drawing" width="200"/>
