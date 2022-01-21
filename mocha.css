@@ -154,7 +154,7 @@ html[data-theme="light"] {
   --red: #e75154;
   --orange: #ffa542;
   --green: #2a9d8f;
-  --golden: 255, 202, 86; /*rgb(255, 202, 86)*/
+  --golden: 255, 231, 154; /*rgb(255, 231, 154)*/
   --blue: #5397d3;
   --white: #ffffff;
 
@@ -381,7 +381,7 @@ a[priority="C"]::before,
 }
 
 .block-children-left-border:hover {
-  background-color: hsl(var(--tradewind), 1);
+  background-color: rgba(var(--golden), 1);
 	transition: var(--transition);
 }
 
@@ -1071,6 +1071,10 @@ a.error,
 span.error {
   background: var(--red) !important;
   color: var(--white, #fff);
+}
+
+.graph-filters{
+	background-color: var(--color-level-1);
 }
 /* MISC END */
 
