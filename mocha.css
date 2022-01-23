@@ -375,11 +375,6 @@ a[priority="C"]::before,
 
 /* START Bullet & Bullet Container */
 
-.bullet-container {
-  height: 20px;
-  width: 20px;
-}
-
 .block-children-left-border:hover {
   background-color: rgba(var(--golden), 1);
 	transition: var(--transition);
