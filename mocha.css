@@ -1,3 +1,5 @@
+/* TODO Issue with active button CSS */
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"); /*@import for "Montserrat" Font If you would like to use it, change `--ls-font-family: Inter` to `--ls-font-family: Montserrat` */
 
 :root {
@@ -52,8 +54,7 @@ html[data-theme="dark"] {
   --ls-tertiary-background-color: #353535;
   --ls-quaternary-background-color: #2b2b2b;
 
-  --ls-table-tr-even-background-color: 33, 33, 33; /*rgb(33, 33, 33)*/
-  --ls-table-tr-odd-background-color: 26, 26, 26; /*rgb(26, 26, 25)*/
+  --ls-table-tr-even-background-color: 33, 33, 33;
 
   --ls-active-primary-color: rgba(var(--golden), 1);
   --ls-active-secondary-color: var(--blue);
@@ -84,7 +85,7 @@ html[data-theme="dark"] {
 
   --ls-block-bullet-border-color: #333332;
   --ls-block-bullet-color: #616161;
-  --ls-block-highlight-color: rgba(81, 100, 94, 1);
+  --ls-block-highlight-color: hsl(166, 6%, 17%);
 
   --ls-selection-background-color: #557bed;
 
@@ -126,6 +127,8 @@ html[data-theme="dark"] {
   --left-sb-txt-color-hover: #cac8c2;
   --left-sb-txt-color: #717171;
 
+	--inverted-text: #1a1a1a;
+
   --external-link-color: #ff7667;
   --external-link-color-hover: #00f5d0;
 
@@ -138,6 +141,8 @@ html[data-theme="dark"] {
   --pre-code-bd: var(--ls-border-color);
 
   --page-ref-bg-hover: #424242;
+
+  --card-title-bg-color: #1f1f1f;
 
   --caret-color: #ff2f81;
 
@@ -165,8 +170,8 @@ html[data-theme="light"] {
   --ls-tertiary-background-color: #eef3f7;
   --ls-quaternary-background-color: #eeeeee;
 
-  --ls-table-tr-even-background-color: 245, 245, 245; /*rgb(245, 245, 245)*/
-  --ls-table-tr-odd-background-color: 255, 255, 255; /*rgb(255, 255, 255)*/
+  /* --ls-table-tr-even-background-color: 245, 245, 245; */
+  /* --ls-table-tr-odd-background-color: 255, 255, 255;  */
 
   --ls-active-primary-color: var(--blue);
   --ls-active-secondary-color: var(--blue);
@@ -195,7 +200,7 @@ html[data-theme="light"] {
 
   --ls-block-bullet-border-color: #dedede;
   --ls-block-bullet-color: #433f3840;
-  --ls-block-highlight-color: #c0e6fd;
+  --ls-block-highlight-color: hsl(202, 80%, 95%);
 
   --ls-selection-background-color: #557bed;
 
@@ -231,6 +236,8 @@ html[data-theme="light"] {
   --left-sb-txt-color-hover: var(--ls-primary-text-color);
   --left-sb-txt-color: #717171;
 
+	--inverted-text: #1a1a1a;
+
   --external-link-color: #ee5020;
   --external-link-color-hover: #93b83d;
 
@@ -244,6 +251,8 @@ html[data-theme="light"] {
 
   --page-ref-bg-hover: rgba(233, 241, 252, 1);
 
+  --card-title-bg-color: #f0f0f0;
+
   --caret-color: #ff2f81;
 
 	--mobile-toolbar-border: hsl(359, 8%, 90%, 0.8);
@@ -252,6 +261,7 @@ html[data-theme="light"] {
   --box-shadow-lg: rgba(171, 171, 171, 0.1) 0 4px 12px;
   --drop-shadow-sm: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
+
 
 .cp__sidebar-main-content {
   margin: 0.25rem 0 1.25rem 0;
@@ -405,27 +415,51 @@ a[priority="C"]::before,
   transition: all 0.5s ease-in-out;
 }
 
-.ls-block h1::after {
+html[data-theme="dark"] .ls-block h1::after {
+  background-image: url("./assets/h1-light.svg");
+}
+
+html[data-theme="dark"] .ls-block h2::after {
+  background-image: url("./assets/h2-light.svg");
+}
+
+html[data-theme="dark"] .ls-block h3::after {
+  background-image: url("./assets/h3-light.svg");
+}
+
+html[data-theme="dark"] .ls-block h4::after {
+  background-image: url("./assets/h4-light.svg");
+}
+
+html[data-theme="dark"] .ls-block h5::after {
+  background-image: url("./assets/h5-light.svg");
+}
+
+html[data-theme="dark"] .ls-block h6::after {
+  background-image: url("./assets/h6-light.svg");
+}
+
+html[data-theme="light"] .ls-block h1::after {
   background-image: url("./assets/h1.svg");
 }
 
-.ls-block h2::after {
+html[data-theme="light"] .ls-block h2::after {
   background-image: url("./assets/h2.svg");
 }
 
-.ls-block h3::after {
+html[data-theme="light"] .ls-block h3::after {
   background-image: url("./assets/h3.svg");
 }
 
-.ls-block h4::after {
+html[data-theme="light"] .ls-block h4::after {
   background-image: url("./assets/h4.svg");
 }
 
-.ls-block h5::after {
+html[data-theme="light"] .ls-block h5::after {
   background-image: url("./assets/h5.svg");
 }
 
-.ls-block h6::after {
+html[data-theme="light"] .ls-block h6::after {
   background-image: url("./assets/h6.svg");
 }
 
@@ -661,235 +695,282 @@ tr:nth-child(even) {
   background: rgb(var(--ls-table-tr-even-background-color));
 }
 
-tr:nth-child(odd) {
-  background: rgb(var(--ls-table-tr-odd-background-color));
-}
 
 /* Table END */
 
 /* START Admonition & Blockquote */
-.admonitionblock,
-.verse,
-blockquote {
-  --bg-bg: #f2f8f3;
-  --bq-txt-bd: 163, 215, 173;
-  --verse-bg: #eaf6f6;
-  --verse-txt-bd: 183, 225, 227;
-  --warn-bg: #fff8e6;
-  --warn-txt-bd: 254, 230, 168;
-  --important-bg: #fcefef;
-  --important-txt-bd: 242, 159, 151;
-  --note-bg: #f3f4f5;
-  --note-txt-bd: 198, 200, 205;
-  --caution-bg: #fff4e7;
-  --caution-txt-bd: 254, 208, 158;
-  --tip-bg: #ecf3f8;
-  --tip-txt-bd: 106, 176, 222;
-  --pinned-bg: #f2f6ff;
-  --pinned-txt-bd: 187, 177, 250;
-  --bq-dark-bg: #41816c;
-  --verse-dark-bg: #39717e;
-  --warn-dark-bg: #836a43;
-  --important-dark-bg: #4f232a;
-  --tip-dark-bg: #405e81;
-  --note-dark-bg: #3f4b5e;
-  --caution-dark-bg: #694234;
-  --pinned-dark-bg: #574080;
+:root {
+	--bq: 169, 41%;
+	--verse: 178, 58%;
+	--warn: 46, 74%;
+	--important: 0, 81%;
+	--tip: 209, 87%;
+	--note: 210, 9%;
+	--caution: 376, 100%;
+	--pinned: 231, 45%;
+	--example: 28, 1%;
 }
 
 .admonitionblock,
 .verse,
 blockquote,
 pre.pre-wrap-white-space {
-  border: 1px solid var(--transparent);
-  border-radius: var(--radius-lg);
-  margin: 1rem 0;
-  padding: 2rem 3rem;
-}
-.admonitionblock .is-paragraph {
-  font-size: 16px;
+	border-top: 1px solid var(--transparent);
+	border-bottom: 1px solid var(--transparent);
+	border-left: 4px solid var(--transparent);
+	border-right: 1px solid var(--transparent);
+	border-radius: var(--radius-none);
+	padding: 1em 3em;
+	margin: 1em 0;
 }
 
-pre.pre-wrap-white-space {
-  border: 1px solid var(--ls-border-color);
+.admonitionblock .is-paragraph {
+  font-size: .885em;
+}
+
+blockquote .is-paragraph:first-child {
+	display: inline;
 }
 
 blockquote::before {
-  font-size: 4.5em;
+	content: "❝";
+  font-size: 2.5em;
   font-weight: normal;
   line-height: 0.1em;
   margin-right: 1px;
   vertical-align: -0.25em;
 }
 
+html[data-theme="dark"] blockquote {
+	background-color: hsl(var(--bq), 66%, 0.05);
+	border-top-color: hsl(var(--bq), 66%, 0.1);
+	border-bottom-color: hsl(var(--bq), 66%, 0.1);
+	border-left-color: hsl(var(--bq), 66%, 0.5);
+	border-right-color: hsl(var(--bq), 66%, 0.1);
+}
+
 html[data-theme="light"] blockquote {
-  background-color: var(--bg-bg);
-  border-color: rgba(var(--bq-txt-bd), 0.1);
-}
-
-html[data-theme="light"] blockquote::before {
-  color: rgba(var(--bq-txt-bd), 1);
-  content: "❝";
-}
-
-html[data-theme="light"] blockquote .is-paragraph:first-child {
-  display: inline;
-}
-
-html[data-theme="light"] .verse {
-  background-color: var(--verse-bg);
-  border-color: rgba(var(--verse-txt-bd), 0.1);
-  font-style: italic;
-}
-
-html[data-theme="light"] .warning {
-  background-color: var(--warn-bg);
-  border-color: rgba(var(--warn-txt-bd), 0.1);
-}
-
-html[data-theme="light"] .warning svg {
-  color: rgba(var(--warn-txt-bd), 1);
-}
-
-html[data-theme="light"] .important {
-  background-color: var(--important-bg);
-  border-color: rgba(var(--important-txt-bd), 0.1);
-}
-
-html[data-theme="light"] .important svg {
-  color: rgba(var(--important-txt-bd), 1);
-}
-
-html[data-theme="light"] .tip {
-  background-color: var(--tip-bg);
-  border-color: rgba(var(--tip-txt-bd), 0.1);
-}
-
-html[data-theme="light"] .tip svg {
-  color: rgba(var(--tip-txt-bd), 1);
-}
-
-html[data-theme="light"] .note {
-  background-color: var(--note-bg);
-  border-color: rgba(var(--note-txt-bd), 0.1);
-}
-
-html[data-theme="light"] .note svg {
-  color: rgba(var(--note-txt-bd), 1);
-}
-
-html[data-theme="light"] .caution {
-  background-color: var(--caution-bg);
-  border-color: rgba(var(--caution-txt-bd), 0.1);
-}
-
-html[data-theme="light"] .caution svg {
-  color: rgba(var(--caution-txt-bd), 1);
-}
-
-html[data-theme="light"] .pinned {
-  background-color: var(--pinned-bg);
-  border-color: rgba(var(--pinned-txt-bd), 0.1);
-}
-
-html[data-theme="light"] .pinned svg {
-  color: rgba(var(--pinned-txt-bd), 1);
-}
-
-html[data-theme="dark"] .admonitionblock,
-html[data-theme="dark"] .verse,
-html[data-theme="dark"] blockquote {
-  color: var(--ls-primary-text-color);
-}
-
-html[data-theme="dark"] blockquote {
-  background-color: var(--bq-dark-bg);
-  border-color: rgba(var(--bq-txt-bd), 0.1);
+	background-color: hsl(var(--bq), 66%, 0.05);
+	border-top-color: hsl(var(--bq), 66%, 0.3);
+	border-bottom-color: hsl(var(--bq), 66%, 0.3);
+	border-left-color: hsl(var(--bq), 66%, 0.5);
+	border-right-color: hsl(var(--bq), 66%, 0.3);
 }
 
 html[data-theme="dark"] blockquote::before {
-  color: rgba(var(--bq-txt-bd), 1);
-  content: "❝";
+	color: hsl(var(--bq), 66%, 0.5);
+}
+html[data-theme="light"] blockquote::before {
+	color: hsl(var(--bq), 66%, 0.5);
 }
 
-html[data-theme="dark"] blockquote .is-paragraph:first-child {
-  display: inline;
+html[data-theme="dark"] .important,
+html[data-theme="dark"] .admonitionblock.important {
+	background-color: hsl(var(--important), 63%, 0.01);
+	border-top-color: hsl(var(--important), 63%, 0.1);
+	border-bottom-color: hsl(var(--important), 63%, 0.1);
+	border-left-color: hsl(var(--important), 63%, 0.5);
+	border-right-color: hsl(var(--important), 63%, 0.1);
 }
 
+html[data-theme="light"] .important,
+html[data-theme="light"] .admonitionblock.important {
+	background-color: hsl(var(--important), 63%, 0.02);
+	border-top-color: hsl(var(--important), 63%, 0.15);
+	border-bottom-color: hsl(var(--important), 63%, 0.15);
+	border-left-color: hsl(var(--important), 63%, 0.4);
+	border-right-color: hsl(var(--important), 63%, 0.15);
+}
 html[data-theme="dark"] .verse {
-  background-color: var(--verse-dark-bg);
-  border-color: rgba(var(--verse-txt-bd), 0.1);
-
-  font-style: italic;
+	background-color: hsl(var(--verse), 52%, 0.03);
+	border-top-color: hsl(var(--verse), 52%, 0.1);
+	border-bottom-color: hsl(var(--verse), 52%, 0.1);
+	border-left-color: hsl(var(--verse), 52%, 0.5);
+	border-right-color: hsl(var(--verse), 52%, 0.1);
+	font-style: italic;
 }
 
-html[data-theme="dark"] .warning {
-  background-color: var(--warn-dark-bg);
-  border-color: rgba(var(--warn-txt-bd), 0.1);
+html[data-theme="light"] .verse {
+	background-color: hsl(var(--verse), 52%, 0.03);
+	border-top-color: hsl(var(--verse), 52%, 0.3);
+	border-bottom-color: hsl(var(--verse), 52%, 0.3);
+	border-left-color: hsl(var(--verse), 52%, 0.3);
+	border-right-color: hsl(var(--verse), 52%, 0.3);
+	font-style: italic;
+}
+
+html[data-theme="dark"] .warning,
+html[data-theme="dark"] .admonitionblock.warning,
+html[data-theme="dark"] #settings > div > article > div > div.flex.flex-row.admonitionblock.align-items.warning {
+	background-color: hsl(var(--warn), 76%, 0.03);
+	border-top-color: hsl(var(--warn), 76%, 0.1);
+	border-bottom-color: hsl(var(--warn), 76%, 0.1);
+	border-left-color: hsl(var(--warn), 76%, 0.5);
+	border-right-color: hsl(var(--warn), 76%, 0.1);
+}
+html[data-theme="light"] .warning,
+html[data-theme="light"] .admonitionblock.warning,
+html[data-theme="light"] #settings > div > article > div > div.flex.flex-row.admonitionblock.align-items.warning {
+	background-color: hsl(var(--warn), 76%, 0.05);
+	border-top-color: hsl(var(--warn), 76%, 0.3);
+	border-bottom-color: hsl(var(--warn), 76%, 0.3);
+	border-left-color: hsl(var(--warn), 76%, 0.5);
+	border-right-color: hsl(var(--warn), 76%, 0.3);
+}
+
+html[data-theme="dark"] .caution,
+html[data-theme="dark"] .admonitionblock.caution {
+	background-color: hsl(var(--caution), 76%, 0.02);
+	border-top-color: hsl(var(--caution), 76%, 0.1);
+	border-bottom-color: hsl(var(--caution), 76%, 0.1);
+	border-left-color: hsl(var(--caution), 76%, 0.5);
+	border-right-color: hsl(var(--caution), 76%, 0.1);
+}
+
+html[data-theme="light"] .caution,
+html[data-theme="light"] .admonitionblock.caution {
+	background-color: hsl(var(--caution), 76%, 0.05);
+	border-top-color: hsl(var(--caution), 76%, 0.3);
+	border-bottom-color: hsl(var(--caution), 76%, 0.3);
+	border-left-color: hsl(var(--caution), 76%, 0.5);
+	border-right-color: hsl(var(--caution), 76%, 0.3);
+}
+
+html[data-theme="dark"] .pinned,
+html[data-theme="dark"] .admonitionblock.pinned {
+	background-color: hsl(var(--pinned), 83%, 0.05);
+	border-top-color: hsl(var(--pinned), 83%, 0.1);
+	border-bottom-color: hsl(var(--pinned), 83%, 0.1);
+	border-left-color: hsl(var(--pinned), 83%, 0.7);
+	border-right-color: hsl(var(--pinned), 83%, 0.1);
+}
+
+html[data-theme="light"] .pinned,
+html[data-theme="light"] .admonitionblock.pinned {
+	background-color: hsl(var(--pinned), 83%, 0.05);
+	border-top-color: hsl(var(--pinned), 83%, 0.3);
+	border-bottom-color: hsl(var(--pinned), 83%, 0.3);
+	border-left-color: hsl(var(--pinned), 83%, 0.7);
+	border-right-color: hsl(var(--pinned), 83%, 0.3);
+}
+
+html[data-theme="dark"] .tip,
+html[data-theme="dark"] .admonitionblock.tip {
+	background-color: hsl(var(--tip), 73%, 0.05);
+	border-top-color: hsl(var(--tip), 73%, 0.1);
+	border-bottom-color: hsl(var(--tip), 73%, 0.1);
+	border-left-color: hsl(var(--tip), 73%, 0.5);
+	border-right-color: hsl(var(--tip), 73%, 0.1);
+}
+
+html[data-theme="light"] .tip,
+html[data-theme="light"] .admonitionblock.tip {
+	background-color: hsl(var(--tip), 73%, 0.05);
+	border-top-color: hsl(var(--tip), 73%, 0.3);
+	border-bottom-color: hsl(var(--tip), 73%, 0.3);
+	border-left-color: hsl(var(--tip), 73%, 0.5);
+	border-right-color: hsl(var(--tip), 73%, 0.3);
+}
+
+html[data-theme="dark"] .note,
+html[data-theme="dark"] .admonitionblock.note {
+	background-color: hsl(var(--note), 76%, 0.05);
+	border-top-color: hsl(var(--note), 76%, 0.1);
+	border-bottom-color: hsl(var(--note), 76%, 0.1);
+	border-left-color: hsl(var(--note), 76%, 0.5);
+	border-right-color: hsl(var(--note), 76%, 0.1);
+}
+
+html[data-theme="light"] .note,
+html[data-theme="light"] .admonitionblock.note {
+	background-color: hsl(var(--note), 76%, 0.05);
+	border-top-color: hsl(var(--note), 76%, 0.4);
+	border-bottom-color: hsl(var(--note), 76%, 0.4);
+	border-left-color: hsl(var(--note), 76%, 0.8);
+	border-right-color: hsl(var(--note), 76%, 0.4);
+}
+
+html[data-theme="dark"] pre.pre-wrap-white-space {
+	background-color: hsl(var(--example), 35%, 0.05);
+	border-top-color: hsl(var(--example), 35%, 0.3);
+	border-bottom-color: hsl(var(--example), 35%, 0.3);
+	border-left-color: hsl(var(--example), 35%, 1);
+	border-right-color: hsl(var(--example), 35%, 0.3);
+}
+
+html[data-theme="light"] pre.pre-wrap-white-space {
+	background-color: hsl(var(--example), 10%, 0.02);
+	border-top-color: hsl(var(--example), 10%, 0.15);
+	border-bottom-color: hsl(var(--example), 10%, 0.15);
+	border-left-color: hsl(var(--example), 10%, 0.6);
+	border-right-color: hsl(var(--example), 10%, 0.15);
+}
+
+html[data-theme="light"] .warning svg {
+	color: hsl(var(--warn), 82%);
+}
+
+html[data-theme="light"] .important svg {
+	color: hsl(var(--important), 63%, 0.5);
+}
+
+html[data-theme="light"] .tip svg {
+	color: hsl(var(--tip), 73%);
+}
+
+html[data-theme="light"] .note svg {
+	color: hsl(var(--note), 76%);
+}
+
+html[data-theme="light"] .caution svg {
+	color: hsl(var(--caution), 84%);
+}
+
+html[data-theme="light"] .pinned svg {
+	color: hsl(var(--pinned), 80%);
 }
 
 html[data-theme="dark"] .warning svg {
-  color: rgba(var(--warn-txt-bd), 1);
-}
-
-html[data-theme="dark"] .important {
-  background-color: var(--important-dark-bg);
-  border-color: rgba(var(--important-txt-bd), 0.1);
+	color: hsl(var(--warn), 82%, 0.6);
 }
 
 html[data-theme="dark"] .important svg {
-  color: rgba(var(--important-txt-bd), 1);
-}
-
-html[data-theme="dark"] .tip {
-  background-color: var(--tip-dark-bg);
-  border-color: rgba(var(--tip-txt-bd), 0.1);
+	color: hsl(var(--important), 63%, 0.5);
 }
 
 html[data-theme="dark"] .tip svg {
-  color: rgba(var(--tip-txt-bd), 1);
-}
-
-html[data-theme="dark"] .note {
-  background-color: var(--note-dark-bg);
-  border-color: rgba(var(--note-txt-bd), 0.1);
+	color: hsl(var(--tip), 73%, 0.6);
 }
 
 html[data-theme="dark"] .note svg {
-  color: rgba(var(--note-txt-bd), 1);
-}
-
-html[data-theme="dark"] .caution {
-  background-color: var(--caution-dark-bg);
-  border-color: rgba(var(--caution-txt-bd), 0.1);
+	color: hsl(var(--note), 86%, 0.8);
 }
 
 html[data-theme="dark"] .caution svg {
-  color: rgba(var(--caution-txt-bd), 1);
-}
-
-html[data-theme="dark"] .pinned {
-  background-color: var(--pinned-dark-bg);
-  border-color: rgba(var(--pinned-txt-bd), 0.1);
+	color: hsl(var(--caution), 84%, 0.6);
 }
 
 html[data-theme="dark"] .pinned svg {
-  color: rgba(var(--pinned-txt-bd), 1);
+	color: hsl(var(--pinned), 80%, 0.6);
 }
 
 .admonition-icon {
-  border-color: var(--transparent);
+	border-color: var(--transparent);
 }
 
 .admonition-icon > svg {
-  background-color: var(--transparent);
-  border-right: var(--transparent);
+	background-color: var(--transparent) !important;
 }
 
 .admonitionblock > .admonition-icon > .svg-shadow {
-  filter: none;
+	-webkit-filter: none;
+	filter: none;
 }
 
+.tip-shadow {
+	-webkit-filter: none;
+	filter: none;
+}
 /*  Admonition & Blockquote END */
 
 /* START MISC */
@@ -901,18 +982,22 @@ html[data-theme="dark"] .pinned svg {
 }
 
 html[data-theme="light"] .inline code {
-  border: 1px solid rgba(var(--ls-page-inline-code-color), 0.2);
+  border: 1px solid rgba(var(--ls-page-inline-code-color), 0.1);
   color: rgba(var(--ls-page-inline-code-color), .8);
 }
 
 html[data-theme="dark"] .inline code {
-  border: 1px solid rgba(var(--ls-page-inline-code-color), 0.2);
-  color: rgba(var(--ls-page-inline-code-color), 0.6);
+  border: 1px solid rgba(var(--ls-page-inline-code-color), 0.1);
+  color: rgba(var(--ls-page-inline-code-color), 0.5);
 }
 
 mark {
   background: var(--highlighter);
   font-size: inherit;
+}
+
+mark .page-ref, mark .bracket{
+	color: #1f1f1f;
 }
 
 hr {
@@ -922,14 +1007,54 @@ hr {
 ::selection {
   background-color: var(--selection);
 }
-.ui__button {
-  background-color: var(--ui-button-bg);
-  color: var(--ui-button-color);
+
+html[data-theme="dark"] .ui__button {
+  background-color: hsl(var(--ui-button-bg), 0.05);
+  border: 1px solid hsl(var(--ui-button-color), 0.1);
   border-radius: var(--radius-md);
+  color: hsl(var(--ui-button-color));
 }
-.ui__button.active,
-.ui__button:hover {
-  background-color: var(--ui-button-bg-hover);
+
+html[data-theme="dark"] .cp__plugins-page .secondary-tabs button.active {
+  background: hsl(var(--ui-button-bg));
+  color: var(--inverted-text);
+}
+
+html[data-theme="light"] .ui__button {
+  background-color: hsl(var(--ui-button-bg), 0.15);
+  border: 1px solid hsl(var(--ui-button-color), 0.5);
+  border-radius: var(--radius-md);
+  color: hsl(var(--ui-button-color));
+}
+
+html[data-theme="light"] .cp__plugins-page .secondary-tabs button.active,
+html[data-theme="light"] .cp__plugins-page .tabs .ui__button.active {
+  background: hsl(var(--ui-button-bg));
+  border: 1px solid hsl(var(--ui-button-color));
+  color: var(--ls-link-text-color);
+}
+
+html[data-theme="dark"] .cp__plugins-page .secondary-tabs button.active,
+html[data-theme="dark"] .cp__plugins-page .tabs .ui__button.active {
+  background: hsl(var(--ui-button-bg));
+  border: 1px solid hsl(var(--ui-button-color));
+  color: var(--inverted-text);
+}
+
+html[data-theme="dark"] .ui__button.active,
+html[data-theme="dark"] .ui__button:hover,
+html[data-theme="dark"] .cp__plugins-page .secondary-tabs button:hover,
+html[data-theme="dark"] .cp__plugins-page .tabs .ui__button:hover {
+  background-color: var(--ui-button-bg-hover) !important;
+  color: var(--inverted-text) !important;
+}
+
+html[data-theme="light"] .ui__button.active,
+html[data-theme="light"] .ui__button:hover,
+html[data-theme="light"] .cp__plugins-page .secondary-tabs button:hover,
+html[data-theme="light"] .cp__plugins-page .tabs .ui__button:hover {
+  background-color: var(--ui-button-bg-hover) !important;
+  color: var(--inverted-text) !important;
 }
 
 a.button.active,
@@ -1051,6 +1176,20 @@ html[data-theme="dark"] .cp__sidebar-help-btn {
 
 div[data-refs-self*='"card"'],
 .cards-review {
+  border: 1px solid var(--ls-border-color);
+}
+
+html[data-theme="light"] .cards-title,
+html[data-theme="light"] .cp__right-sidebar .cards-title,
+html[data-theme="light"] .ui__modal .cards-title {
+  background-color: var(--card-title-bg-color);
+  border: 1px dotted var(--ls-border-color);
+}
+
+html[data-theme="dark"] .cards-title,
+html[data-theme="dark"] .cp__right-sidebar .cards-title,
+html[data-theme="dark"] .ui__modal .cards-title {
+  background-color: var(--card-title-bg-color);
   border: 1px dotted var(--ls-border-color);
 }
 
@@ -1071,12 +1210,13 @@ span.error {
 .graph-filters{
 	background-color: var(--color-level-1);
 }
+
 /* MISC END */
 
 /* START Settings & Marketplace */
 
 .cp__plugins-item-card {
-  background: var(--ls-primary-background-color, #fff);
+  background: var(--ls-primary-background-color);
   border: 1px solid var(--ls-border-color);
   box-shadow: var(--box-shadow-sm);
 }
@@ -1090,9 +1230,6 @@ span.error {
   opacity: 1;
 }
 
-.cp__plugins-page .tabs .ui__button.active {
-  background-color: var(--quaternary-background-color);
-}
 .keyboard-shortcut > code {
   --kbd-color: 74, 74, 74; /* rgb(74, 74, 74) */
   --kbd-color-dark: 187, 202, 213; /*rgb (rgb(187, 202, 213) */
@@ -1314,5 +1451,95 @@ html[data-theme="dark"] .keyboard-shortcut > code {
 #mobile-editor-toolbar button {
 	border-left: 1px solid var(--mobile-toolbar-border);
 }
+/* START Templater plugin */
 
-/*Mobile Application Adjustments END */
+.templater-btn {
+  background-color: hsl(var(--ui-button-bg), 0.05);
+  border: 1px solid hsl(var(--ui-button-color), 0.1);
+  border-radius: var(--radius-md);
+  color: hsl(var(--ui-button-color));
+  padding: 0.2em 0.8em;
+}
+
+.templater-btn:hover {
+  background: hsl(var(--ui-button-bg));
+  border: 1px solid hsl(var(--ui-button-color));
+  color: var(--inverted-text);
+  cursor: pointer;
+}
+
+/* Templater plugin END */
+
+/* START TOC Generatorv Plugin */
+.kef-tocgen-backtop {
+  background-color: var(--color-level-5);
+  border: 1px solid var(--ls-border-color);
+  color: var(--ui-button-color);
+}
+
+.kef-tocgen-backtop:hover {
+  box-shadow: var(--box-shadow-lg);
+}
+/* TOC  TOC Generatorv Plugin END */
+/* START Plugin Wrap */
+span[data-ref="#red"] + mark {
+  background: hsl(338, 80%, 80%, 0.8);
+}
+
+span[data-ref="#green"] + mark {
+  background: hsl(173, 60%, 62%, 0.8);
+}
+
+span[data-ref="#blue"] + mark {
+  background: hsl(209, 87%, 73%, 0.8);
+}
+
+html[data-theme="dark"] span[data-ref="$red"] + mark {
+  color: hsl(338, 80%, 70%, 0.8);
+  background: unset;
+  padding: 0;
+  border-radius: 0;
+	text-decoration: none;
+}
+
+html[data-theme="dark"] span[data-ref="$green"] + mark {
+  color: hsl(173, 60%, 62%, 0.8);
+  background: unset;
+  padding: 0;
+  border-radius: 0;
+	text-decoration: none;
+}
+
+html[data-theme="dark"] span[data-ref="$blue"] + mark {
+  color: hsl(209, 87%, 73%, 0.8);
+  background: unset;
+  padding: 0;
+  border-radius: 0;
+	text-decoration: none;
+}
+
+html[data-theme="light"] span[data-ref="$red"] + mark {
+  color: hsl(338, 80%, 40%, 0.8);
+  background: unset;
+  padding: 0;
+  border-radius: 0;
+	text-decoration: none;
+}
+
+html[data-theme="light"] span[data-ref="$green"] + mark {
+  color: hsl(173, 60%, 32%, 0.8);
+  background: unset;
+  padding: 0;
+  border-radius: 0;
+	text-decoration: none;
+}
+
+html[data-theme="light"] span[data-ref="$blue"] + mark {
+  color: hsl(209, 87%, 43%, 0.8);
+  background: unset;
+  padding: 0;
+  border-radius: 0;
+	text-decoration: none;
+}
+/* Plugin Wrap END */
+/* Plugins END */
