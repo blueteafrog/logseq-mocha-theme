@@ -31,8 +31,6 @@ Method 2. From the settings menu select the theme and your preferred version (Li
 <img src="https://user-images.githubusercontent.com/7694090/147842600-b004de9b-adb6-4d2e-9396-eca1d9bb2c97.png" alt="drawing">
 <img src="https://user-images.githubusercontent.com/7694090/147842601-4e3d4d97-549c-49e1-b15e-eed4152f80e6.png" alt="drawing">
 <img src="https://user-images.githubusercontent.com/7694090/147842603-9cb7b1ff-c979-4c48-8adb-fce9e6f231b5.png" alt="drawing">
-<img src="https://user-images.githubusercontent.com/7694090/147842604-d9030e7a-40b0-4ba9-a120-200354c32d15.png" alt="drawing">
-<img src="https://user-images.githubusercontent.com/7694090/147842605-58b40cb3-ed9e-4637-85ce-071f53738665.png" alt="drawing">
 
 ### Issues & Feedback
 
