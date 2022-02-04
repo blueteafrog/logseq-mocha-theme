@@ -54,7 +54,10 @@ html[data-theme="dark"] {
   --ls-tertiary-background-color: #353535;
   --ls-quaternary-background-color: #2b2b2b;
 
-  --ls-table-tr-even-background-color: 33, 33, 33;
+  --ls-table-tr-even-background-color: transparent;
+
+	--ls-table-tr-odd-background-color: rgba(41, 42, 43, 0.50);
+
 
   --ls-active-primary-color: rgba(var(--golden), 1);
   --ls-active-secondary-color: var(--blue);
@@ -170,8 +173,9 @@ html[data-theme="light"] {
   --ls-tertiary-background-color: #eef3f7;
   --ls-quaternary-background-color: #eeeeee;
 
-  /* --ls-table-tr-even-background-color: 245, 245, 245; */
-  /* --ls-table-tr-odd-background-color: 255, 255, 255;  */
+  --ls-table-tr-even-background-color: var(--transparent);
+
+  --ls-table-tr-odd-background-color: rgba(244, 244, 244, 0.5);
 
   --ls-active-primary-color: var(--blue);
   --ls-active-secondary-color: var(--blue);
@@ -372,12 +376,12 @@ a[priority="C"]::before,
 }
 
 .external-link {
-  border-bottom: 1px dotted var(--external-link-color);
+  border-bottom: 1px solid var(--external-link-color);
   color: var(--external-link-color);
 }
 
 .external-link:hover {
-  border-bottom: 1px dotted var(--external-link-color-hover);
+  border-bottom: 1px solid var(--external-link-color-hover);
   color: var(--external-link-color-hover);
 }
 
@@ -617,7 +621,7 @@ html[data-theme="light"] .cp__header > .l a {
 }
 
 .dropdown-wrapper hr {
-  border-color: rgba(var(--left-sb-dropdown-bd), 0.2);
+  border-color: rgba(var(--left-sb-dropdown-bd), 0.15);
 }
 
 nav:nth-child(1) > div.relative > div > div > div {
@@ -630,7 +634,7 @@ nav:nth-child(1) > div.relative > div > div > a {
 
 .dark-theme #head > div.r.flex > div > div > div,
 nav:nth-child(1) > div.relative > div {
-  border: 1px dotted rgba(var(--left-sb-dropdown-bd), 0.5);
+  border: 1px solid rgba(var(--left-sb-dropdown-bd), 0.15);
 }
 
 #left-sidebar a,
@@ -680,6 +684,9 @@ html[data-theme="dark"] .cp__right-sidebar .sidebar-item {
 .table-wrapper > table th {
   border: solid 1px var(--ls-border-color);
 }
+tr:nth-child(odd) {
+	background-color: var(--transparent);
+}
 
 th {
   font-size: 1em;
@@ -691,8 +698,8 @@ td {
   padding: 0.6rem;
 }
 
-tr:nth-child(even) {
-  background: rgb(var(--ls-table-tr-even-background-color));
+table > tbody > tr:nth-of-type(odd) > * {
+  background: var(--ls-table-tr-odd-background-color);
 }
 
 
@@ -1176,21 +1183,24 @@ html[data-theme="dark"] .cp__sidebar-help-btn {
 
 div[data-refs-self*='"card"'],
 .cards-review {
-  border: 1px solid var(--ls-border-color);
+	border-bottom-left-radius: var(--radius-none);
+	border-top-left-radius: var(--radius-none);
+  outline: 1px solid var(--ls-border-color);
+	margin: .5em 0 .5em 0 ;
 }
 
 html[data-theme="light"] .cards-title,
 html[data-theme="light"] .cp__right-sidebar .cards-title,
 html[data-theme="light"] .ui__modal .cards-title {
   background-color: var(--card-title-bg-color);
-  border: 1px dotted var(--ls-border-color);
+  border: 1px solid var(--ls-border-color);
 }
 
 html[data-theme="dark"] .cards-title,
 html[data-theme="dark"] .cp__right-sidebar .cards-title,
 html[data-theme="dark"] .ui__modal .cards-title {
   background-color: var(--card-title-bg-color);
-  border: 1px dotted var(--ls-border-color);
+  border: 1px solid var(--ls-border-color);
 }
 
 a.warning,
