@@ -67,7 +67,7 @@ html[data-theme="dark"] {
 
 	--ls-block-properties-background-color: #292a2b;
 	--ls-page-properties-background-color: var(--ls-block-properties-background-color);
-	--ls-block-bullet-active-color: red;
+	/* --ls-block-bullet-active-color: red; */
 	--ls-search-background-color: var(--ls-primary-background-color);
 	--ls-border-color: #363636;
 	--ls-secondary-border-color: #3d3c3c;
@@ -1146,9 +1146,10 @@ input {
 	color: inherit;
 	transition: var(--transition);
 }
+
 .page-reference:hover,
 .references-blocks .page-reference:hover {
-  background-color: var(--page-ref-bg-hover);
+	background-color: var(--page-ref-bg-hover);
 }
 
 .foldable-title h2 {
